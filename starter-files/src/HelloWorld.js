@@ -19,7 +19,8 @@ const HelloWorld = () => {
 
   //called only once
   useEffect(async () => {
-    
+      const message = await loadCurrentMessage()
+      setMessage(message)
   }, []);
 
   function addSmartContractListener() { //TODO: implement
@@ -67,7 +68,7 @@ const HelloWorld = () => {
         />
         <p id="status">{status}</p>
 
-        <button id="publish" onClick={onUpdatePressed}>
+        <button id="publishButton" onClick={onUpdatePressed}>
           Update
         </button>
       </div>
